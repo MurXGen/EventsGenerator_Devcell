@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+* {
+    font-family: "poppins";
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #3C003D, #165164, #003647);
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.navbar .icon span {
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    font-size: 24px;
+}
+
+.hamburgerMenu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    transition-duration: 0.3s;
+}
+
+.hamburgerMenu:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.hamburgerMenu .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+.navbar .menu {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 50px;
+    font-weight: 400;
+}
+
+.navbar .menu.open {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.navbar .menu .account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: rgb(30, 30, 30);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Navbar ends here  */
+
+.loginForm {
+    margin-top: 60px;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    color: white;
+    gap: 30px;
+}
+
+.loginForm .title {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm .title span:nth-child(1) {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.loginForm .title span:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.loginForm form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    gap: 20px;
+}
+
+.loginForm form input {
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    border: 0;
+    color: rgb(38, 38, 38);
+}
+
+.loginForm form .loginButton {
+    padding: 15px 50px;
+    background-color: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    border: 0;
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.loginForm form .loginButton img {
+    width: 12px;
+    transition-duration: 0.5s;
+}
+
+.loginForm form .loginButton:hover img {
+    transform: translateX(10px);
+    transition: 0.5s ease;
+}
+
+.loginForm .msg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loginForm .registerButton {
+    border-radius: 20px;
+    padding: 6px 18px;
+    border: 0;
+    background: rgba(34, 34, 34, 0.7);
+    color: rgb(255, 255, 255);
+    border: 0.5px dashed white;
+    cursor: pointer;
+}
+
+
+/* Login and reg ends  */
+
+.dashboard {
+    background-image: url('../src/assets/eventDashboard.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+
+}
+
+
+
+.dashboard .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 150px 40px;
+    z-index: 1;
+}
+
+.dashboard .content .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 1;
+
+}
+
+.dashboard .content .title span:nth-child(1) {
+
+    font-size: 56px;
+    color: rgb(223, 245, 255);
+}
+
+.dashboard .content .title span:nth-child(2) {
+    font-size: 16px;
+    color: rgb(223, 245, 255);
+}
+
+.dashboard .content .navigators {
+    display: flex;
+    gap: 20px;
+}
+
+.dashboard .content .navigators button {
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: rgb(30, 30, 30);
+    padding: 10px 30px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* dashboard ends here */
+
+/* CreateEVents starts here */
+
+.templateBox {
+    padding: 60px 40px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.templateBox .title {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.templateBox .title span {
+    font-size: 24px;
+    color: aliceblue;
+}
+
+.eventTemplates {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: 40px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+
+
+.eventTemplates::-webkit-scrollbar {
+    display: none;
+}
+
+.eventTemplates .eventTemplate {
+    min-width: 350px;
+    max-width: 350px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px 30px;
+}
+
+.eventTemplates .eventTemplate img {
+    border-radius: 10px;
+    width: 200px;
+    height: 150px;
+}
+
+.templateBox .eventTemplates .eventTemplate .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.eventTemplates .eventTemplate .content .contentTitle {
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.eventTemplates .eventTemplate .content .contentTitle span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.eventTemplates .eventTemplate .content .contentTitle span:nth-child(2) {
+    font-size: 12px;
+}
+
+.eventTemplates .eventTemplate .content .contentButton button {
+    padding: 5px 18px;
+    border: 0;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+
+/* edit template */
+
+.editTemplateBox {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.editTemplateBox .editTitle .title {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.editTemplateBox .editTitle .title img {
+    width: 20px;
+}
+
+.editTemplateBox .editTitle .title span {
+    font-size: 16px;
+}
+
+.editTemplateBox .editTemplate {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 40px;
+}
+
+.editTemplateBox .editTemplate .imgUpload {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.editTemplateBox .editTemplate .imgUpload img {
+    width: 100%;
+    min-width: 400px;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+.file-upload-wrapper {
+    margin: 20px 0;
+    position: relative;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dim background color */
+    color: #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    /* Slightly darker on hover */
+}
+
+#file-upload {
+    display: none;
+    /* Hide the actual file input */
+}
+
+.editTemplateBox .editTemplate form .formWrite {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 25px;
+}
+
+.editTemplateBox .editTemplate form .formWrite input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.editTemplateBox .editTemplate form .formWrite input {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 0;
+    width: 70%;
+    margin: 15px 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    height: 40px;
+}
+
+.editTemplateBox .editTemplate form .formControls {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.editTemplateBox .editTemplate form .formControls button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.eventsList{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+    padding: 40px;
+}
+
+.eventsList .eventsHeader{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px 15px;
+    border-radius: 50px;
+    border: 1px dashed rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: fit-content;
+    max-width: fit-content;
+}
+
+.eventsList .events{
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.eventsList .events .event{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 18px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 40px 20px;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    color: rgb(255, 255, 255);
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.eventsList .events .event img{
+    border-radius: 12px;
+    width: 100%;
+}
+
+.eventsList .events .event .eventTitle{
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.eventsList .events .event .eventContent{
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 15px 15px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 24px;
+    color: #c3ecf9;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .navbar {
+        position: relative;
+        z-index: 3;
+    }
+
+    .navbar .menu {
+        display: none;
+    }
+
+    .navbar .menu.open {
+        flex-direction: column;
+        gap: 30px;
+        position: absolute;
+        top: 50px;
+        right: 80px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px 20px;
+        border-radius: 5px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar .menu.open a{
+        transition-duration: 0.3s;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .menu.open a:hover {
+        background-color: #ccc;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        color: black;
+        transition: 0.3s ease-in-out;
+    }
+
+    .navbar .menu.open .account{
+        color: white;
+
+    }
+
+    .navbar .menu.open .account:hover{
+        background-color: rgba(41, 41, 41, 0.8);
+        color: #ffffff;
+    }
+
+    .hamburgerMenu {
+        display: flex;
+    }
+
+
+    .file-upload-wrapper {
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .templateBox .title {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .templateBox .title img {
+        width: 32px;
+    }
+
+    .dashboard .content .title span:nth-child(1) {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .dashboard .content .navigators button {
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        color: rgb(30, 30, 30);
+        padding: 12px 20px;
+        border-radius: 40px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .eventTemplates .eventTemplate {
+        min-width: 300px;
+        max-width: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 20px 30px;
+    }
+
+    .eventTemplates .eventTemplate img {
+        border-radius: 10px;
+        width: 180px;
+        height: 120px;
+    }
+
+    .templateBox .title span {
+        font-size: 20px;
+        color: aliceblue;
+    }
+
+    .editTemplateBox .editTemplate {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 40px;
+    }
+
+    .editTemplateBox .editTemplate .imgUpload img {
+        width: 100%;
+        min-width: 250px;
+        max-width: 500px;
+        border-radius: 20px;
+    }
+}
