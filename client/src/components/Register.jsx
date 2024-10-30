@@ -8,10 +8,32 @@ const Register = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState(''); 
     const navigate = useNavigate();
+
+    
+    const validateEmail = (email) => {
+        return email.endsWith('@gmail.com');
+    };
+
+    
+    const validatePassword = (password) => {
+        return password.length > 6;
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!validateEmail(email)) {
+            setMessage('Email must end with @gmail.com');
+            return;
+        }
+
+        if (!validatePassword(password)) {
+            setMessage('Password must be more than 6 characters');
+            return;
+        }
+
         try {
             const response = await axios.post('http://localhost:5000/api/auth/register', {
                 username,
@@ -19,10 +41,10 @@ const Register = () => {
                 password,
             });
             alert(response.data.message);
-            
+
             navigate('/login');
         } catch (error) {
-            alert(error.response?.data.message || 'Registration failed');
+            setMessage(error.response?.data.message || 'Registration failed');
         }
     };
 
@@ -32,7 +54,7 @@ const Register = () => {
 
     return (
         <div>
-            <NavbarAcc/>
+            <NavbarAcc />
             <div className="loginForm">
                 <div className="title">
                     <span>Register</span>
@@ -66,10 +88,10 @@ const Register = () => {
 
                     <button className="loginButton" type="submit">
                         Register
-                        <img src={Loginicon} alt="" srcset="" />
+                        <img src={Loginicon} alt="" />
                     </button>
                 </form>
-                
+                {message && <p>{message}</p>} 
             </div>
         </div>
     );

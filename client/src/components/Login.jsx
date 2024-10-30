@@ -10,8 +10,21 @@ const Login = () => {
     const [message, setMessage] = useState('');
     const navigate = useNavigate(); 
 
+    const validateEmail = (email) => {
+        return email.endsWith('@gmail.com');
+    };
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!validateEmail(email)) {
+            setMessage('Email must end with @gmail.com');
+            return;
+        }
+
+    
         try {
             const response = await axios.post('http://localhost:5000/api/auth/login', {
                 email,
@@ -19,7 +32,7 @@ const Login = () => {
             });
             setMessage(response.data.message);
           
-            navigate('/');
+            navigate('/'); // Redirect on successful login
         } catch (error) {
             setMessage(error.response?.data.message || 'Login failed');
         }
@@ -28,8 +41,6 @@ const Login = () => {
     const handleRegisterRedirect = () => {
         navigate('/register'); 
     };
-
-    
 
     return (
         <div>
@@ -48,6 +59,7 @@ const Login = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         autoComplete="off"
+                        autoFill="off"
                     />
                     <input
                         type="password"
@@ -64,12 +76,11 @@ const Login = () => {
 
                     <button className="loginButton" type="submit">
                         Login
-                        <img src={Loginicon} alt="" srcset="" />
+                        <img src={Loginicon} alt="" />
                     </button>
                 </form>
                 {message && <p>{message}</p>}
             </div>
-
         </div>
     );
 };

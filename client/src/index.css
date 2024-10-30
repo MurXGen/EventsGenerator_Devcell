@@ -13,7 +13,7 @@ body {
 }
 
 body {
-    background: linear-gradient(45deg, #3C003D, #165164, #003647);
+    background: linear-gradient(45deg, #82c3f9 , #e358ff);
     min-height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -84,8 +84,9 @@ body {
 }
 
 .navbar .menu a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    font-weight: 600;
 }
 
 
@@ -187,7 +188,7 @@ body {
     border-radius: 20px;
     padding: 6px 18px;
     border: 0;
-    background: rgba(34, 34, 34, 0.7);
+    background: rgba(34, 34, 34, 0.3);
     color: rgb(255, 255, 255);
     border: 0.5px dashed white;
     cursor: pointer;
@@ -506,13 +507,18 @@ body {
     display: flex;
     justify-content: start;
     gap: 20px;
+    overflow: scroll;
 }
+
+.eventsList .events::-webkit-scrollbar {
+    display: none;
+  }
 
 .eventsList .events .event{
     display: grid;
     grid-template-columns: auto;
     gap: 18px;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
     padding: 40px 20px;
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -528,7 +534,7 @@ body {
 
 .eventsList .events .event .eventTitle{
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
     padding: 10px;
     border-radius: 10px;
     font-weight: 500;
@@ -536,13 +542,31 @@ body {
 
 .eventsList .events .event .eventContent{
     font-size: 12px;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
     padding: 15px 15px;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 50% 50%;
     row-gap: 24px;
     color: #c3ecf9;
+}
+
+.eventsList .cityFilter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    max-width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.eventsList .cityFilter select{
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 50px;
 }
 
 @media only screen and (max-width: 1200px) {
